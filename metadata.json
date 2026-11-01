@@ -1,0 +1,8 @@
+{
+  "name": "The Last Alibi",
+  "description": "An immersive AI-powered multiplayer murder mystery game set in Blackwood University with forensic investigation, dynamic AI suspect interrogations, and case files.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

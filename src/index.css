@@ -1,0 +1,278 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-charcoal: #171717;
+    --color-warm-black: #22201D;
+    --color-parchment: #E8DFCC;
+    --color-parchment-light: #F4EFE6;
+    --color-gold: #B49A67;
+    --color-gold-muted: #8E784D;
+    --color-burgundy: #702D35;
+    --color-burgundy-dark: #4A1B21;
+    --color-warm-grey: #A9A398;
+    --color-border-subtle: #2E2B26;
+    --color-border-strong: #3D3933;
+  }
+
+  body {
+    background-color: #171717;
+    color: #E8DFCC;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  /* Editorial Serifs */
+  h1, h2, h3, .font-editorial, .font-serif-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-feature-settings: "kern" 1, "liga" 1;
+    letter-spacing: -0.01em;
+  }
+
+  .font-monumental {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.08em;
+  }
+
+  /* Archival Monospace */
+  .font-mono-archive, code, pre {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    font-feature-settings: "zero" 1;
+  }
+}
+
+/* Subtle archival custom scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #171717;
+}
+::-webkit-scrollbar-thumb {
+  background: #2E2B26;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B49A67;
+}
+
+/* Editorial Stamps & Seals */
+.stamp-confidential {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #702D35;
+  border: 1px solid #702D35;
+  padding: 0.15rem 0.5rem;
+  font-weight: 700;
+  transform: rotate(-1.5deg);
+}
+
+.stamp-archived {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #B49A67;
+  border: 1px solid #B49A67;
+  padding: 0.15rem 0.5rem;
+  font-weight: 600;
+}
+
+.stamp-verified-evidence {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #588157;
+  border: 1px solid #588157;
+  padding: 0.15rem 0.5rem;
+  font-weight: 600;
+}
+
+/* Aged document and fine line accents */
+.dossier-hairline {
+  border-color: #2E2B26;
+}
+
+.dossier-hairline-gold {
+  border-color: rgba(180, 154, 103, 0.35);
+}
+
+/* Paper grain subtle overlay */
+.paper-texture {
+  background-color: #22201D;
+  background-image: 
+    radial-gradient(rgba(180, 154, 103, 0.04) 1px, transparent 0),
+    radial-gradient(rgba(232, 223, 204, 0.02) 1px, transparent 0);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+}
+
+.manila-card {
+  background-color: #1F1D1A;
+  border: 1px solid #332F2A;
+}
+
+.manila-card:hover {
+  border-color: #B49A67;
+}
+
+/* Strict button states */
+.btn-gold {
+  background-color: #B49A67;
+  color: #171717;
+  font-weight: 600;
+  border: 1px solid #B49A67;
+  transition: all 0.15s ease;
+}
+
+.btn-gold:hover {
+  background-color: #C7AD7A;
+  border-color: #C7AD7A;
+}
+
+.btn-dossier {
+  background-color: #22201D;
+  color: #E8DFCC;
+  border: 1px solid #38332C;
+  transition: all 0.15s ease;
+}
+
+.btn-dossier:hover {
+  background-color: #2A2723;
+  border-color: #B49A67;
+  color: #F4EFE6;
+}
+
+.btn-burgundy {
+  background-color: #702D35;
+  color: #E8DFCC;
+  border: 1px solid #702D35;
+  transition: all 0.15s ease;
+}
+
+.btn-burgundy:hover {
+  background-color: #853741;
+  border-color: #853741;
+}
+
+/* --- PSYCHOLOGICAL HORROR & GAMING HUD STYLES --- */
+
+/* CRT Surveillance Scanlines */
+.crt-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.4) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Chilling Chronometer Pulse */
+@keyframes chronometer-pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(180, 154, 103, 0.2);
+    border-color: rgba(180, 154, 103, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(112, 45, 53, 0.6);
+    border-color: rgba(112, 45, 53, 0.8);
+  }
+}
+
+.horror-chronometer-panic {
+  animation: chronometer-pulse 1s infinite ease-in-out;
+}
+
+/* Screen Glitch Jitter & Chromatic Aberration */
+@keyframes screen-glitch {
+  0% {
+    transform: translate(0);
+    filter: none;
+  }
+  15% {
+    transform: translate(-4px, 2px) skewX(1deg);
+    filter: drop-shadow(4px 0 rgba(255, 0, 60, 0.8)) drop-shadow(-4px 0 rgba(0, 255, 255, 0.8));
+  }
+  30% {
+    transform: translate(3px, -2px) skewX(-1.5deg);
+    filter: invert(0.15) drop-shadow(-3px 0 #702D35);
+  }
+  45% {
+    transform: translate(-3px, -3px);
+  }
+  60% {
+    transform: translate(4px, 1px) skewX(2deg);
+    filter: drop-shadow(5px 0 #702D35);
+  }
+  75% {
+    transform: translate(-2px, 3px);
+    filter: contrast(150%) hue-rotate(90deg);
+  }
+  100% {
+    transform: translate(0);
+    filter: none;
+  }
+}
+
+.glitch-screen-active {
+  animation: screen-glitch 0.25s infinite;
+}
+
+/* Bloodied Inquest Threat Letter */
+.threat-letter-dossier {
+  background-color: #1a1715;
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(112, 45, 53, 0.25) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(112, 45, 53, 0.3) 0%, transparent 50%),
+    repeating-linear-gradient(0deg, rgba(30, 26, 22, 0.5) 0px, rgba(30, 26, 22, 0.5) 1px, transparent 1px, transparent 24px);
+  box-shadow: 
+    0 0 50px rgba(0, 0, 0, 0.95),
+    inset 0 0 30px rgba(70, 27, 33, 0.4),
+    0 0 0 1px #702D35;
+}
+
+/* Surveillance Camera HUD Frame */
+.surveillance-hud-box {
+  background: #0f1012;
+  position: relative;
+  border: 1px solid #332F2A;
+}
+
+.surveillance-hud-box::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 14px;
+  height: 14px;
+  border-top: 2px solid #B49A67;
+  border-left: 2px solid #B49A67;
+  pointer-events: none;
+}
+
+.surveillance-hud-box::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 14px;
+  height: 14px;
+  border-bottom: 2px solid #B49A67;
+  border-right: 2px solid #B49A67;
+  pointer-events: none;
+}
