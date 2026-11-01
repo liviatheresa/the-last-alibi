@@ -39,6 +39,9 @@ if (apiKey && apiKey !== 'MY_GEMINI_API_KEY') {
 
 // Model fallback cascade prioritizing active models with available quota
 const CANDIDATE_MODELS = [
+  'gemini-2.5-flash',
+  'gemini-2.5-flash-lite',
+  'gemini-1.5-flash',
   'gemini-3.5-flash',
   'gemini-3.5-flash-lite',
   'gemini-flash-lite-latest',
